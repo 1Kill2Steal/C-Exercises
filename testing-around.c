@@ -1,14 +1,8 @@
 #include <stdio.h>
 
-int main() {
-    const char * z = "testing one two three";
-    int m;
-    int charcount;
+// this file is only for writing and testing
+// code, finished projects are elsewhere,
 
-    charcount = 0;
-    for(m=0; z[m]; m++) {
-        if(z[m] != ' ') {
-            charcount ++;
-        }
-    }
+int main() {
+    
 }
