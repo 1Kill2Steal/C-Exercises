@@ -1,8 +1,10 @@
 #include <stdio.h>
 
 int main() {
-    int nc, linesCount, tabCount, spaceCount;
-    linesCount = 0, tabCount = 0, spaceCount = 0;
+
+    // just testing how it'd work with a switch statement
+
+    int nc, linesCount = 0, tabCount = 0, spaceCount = 0;
 
     while((nc = getchar()) != EOF) {
         switch (nc) {

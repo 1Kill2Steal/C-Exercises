@@ -1,8 +1,8 @@
 #include <stdio.h>
 
 int main() {
-    int c, i, nwhite, nother;
-    int ndigit[10];
+    int c, i, nwhite, nother; // characters, white space
+    int ndigit[10]; // ascii '0' - '9'
 
     nwhite = nother = 0;
     for (i = 0; i < 10; ++i) 

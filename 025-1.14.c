@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 int main() {
-    int c = 0, count[74] = {0}, x;
+    int c = 0, count[74] = {0}, x; // ascii for '0' to 'z'
 
     printf("Enter a string:\n");
 

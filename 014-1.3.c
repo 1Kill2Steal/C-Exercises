@@ -1,5 +1,7 @@
 #include <stdio.h>
 
+// Already solved (same as "010-fahr-celsius")
+
 int main()
 {
     int fahr, celsius;
@@ -13,7 +15,7 @@ int main()
     printf("Fahrenheit | Celsius\n");
     while (fahr <= upper) {
         celsius = 5 * (fahr-32) / 9;
-        printf("%3d\t    %6d\n", fahr, celsius);
+        printf("%d\t    %d\n", fahr, celsius);
         fahr += step;
     }
 }

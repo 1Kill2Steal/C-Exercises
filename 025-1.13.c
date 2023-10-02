@@ -1,7 +1,7 @@
 #include <stdio.h>
 
-#define OUT     0
-#define IN      1
+#define IN      1 // no new word
+#define OUT     0 // new word
 
 int main() {
     int c, i, counter, wordCounter, state;
@@ -16,7 +16,7 @@ int main() {
             state = OUT;
             --counter;
         }
-	    else if (state == OUT) {
+	    else if (state == OUT) { // i don't know about this warning, but it causes no issues.
             state = IN;
 	        wordLength[wordCounter] = counter;
             counter = 0;
@@ -27,7 +27,7 @@ int main() {
 
     }
     
-    wordLength[wordCounter] = counter;
+    wordLength[wordCounter] = counter; //this part exists to check the last word assuming there's no white space.
 
     printf("\nword lengths:\n");
     for(i = 1; i <= wordCounter; ++i) {

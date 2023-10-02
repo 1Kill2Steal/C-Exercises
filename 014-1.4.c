@@ -9,11 +9,11 @@ int main()
     upper = 300; // max value
     step = 20; // increment rate
 
-    fahr = lower;
+    celsius = lower;
     printf("Fahrenheit | Celsius\n");
-    while (fahr <= upper) {
-        celsius = 5 * (fahr-32) / 9;
-        printf("%3d\t    %3d\n", fahr, celsius);
-        fahr += step;
+    while (celsius <= upper) {
+        fahr = 5 * (fahr-32) / 9;
+        printf("%d\t    %d\n", celsius, fahr);
+        celsius += step;
     }
 }
