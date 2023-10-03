@@ -1,7 +1,10 @@
 #include <stdio.h>
 
+// 122 (position of 'z' on the ascii table) - 48 (position of '0' on the ascii table) = 74
+#define ARRAY_SIZE 'z' - '0'
+
 int main() {
-    int c = 0, count[74] = {0}, x; // ascii for '0' to 'z'
+    int c = 0, count[ARRAY_SIZE] = {0}, x;
 
     printf("Enter a string:\n");
 
@@ -14,7 +17,7 @@ int main() {
         c++;
     }
     
-    for(c = 0; c < 74; c++)
+    for(c = 0; c < ARRAY_SIZE; c++)
         printf("%c' occurs %d times in the string.\n", c + '0', count[c]);
 
     return 0;

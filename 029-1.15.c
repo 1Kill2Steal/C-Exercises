@@ -12,7 +12,7 @@ int main()
 
     printf("Celsius\t\tFahrenheit (w/ functions)\n");
 
-    for(i = 0.0; i <= UPPER; i += STEP)
+    for(i = LOWER; i <= UPPER; i += STEP)
         printf("%7.1f\t\t%10.1f\n", i, celsToFahr(i));
     
     return 0;
