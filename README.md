@@ -1,5 +1,5 @@
 The entire repository is based out of the book:
-"C Programming Language, 2nd Edition".
+"The C Programming Language, 2nd Edition".
 
 This main folder contains all the program examples sorted by
 page (001, 002 ... and so on).
