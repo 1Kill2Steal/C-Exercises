@@ -1,14 +1,13 @@
-#include <stdio.h>
-
 // this file is only for writing and testing
 // code, finished projects are elsewhere,
+// currently working on: 032-1.16
 
-//currently working on: 030-array-of-symbols.c
+#include <stdio.h>
 
 //defines the longest length of the char array.
 #define MAXLINE		1000
 
-int getline(char line[], int maxline);
+int getline(char line[], int maxline); // i don't know how to make it work...
 void copy(char to[], char from[]);
 
 int main()
