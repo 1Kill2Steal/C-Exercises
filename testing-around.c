@@ -7,7 +7,7 @@
 //defines the longest length of the char array.
 #define MAXLINE		1000
 
-int getline(char line[], int maxline); // i don't know how to make it work...
+int getlines(char line[], int maxline); 
 void copy(char to[], char from[]);
 
 int main()
@@ -17,7 +17,7 @@ int main()
 	char line[MAXLINE]; //current line
 	char longest[MAXLINE]; //longest line
 	max = 0;
-	while ((len = getline(line, MAXLINE)) > 0)
+	while ((len = getlines(line, MAXLINE)) > 0)
 		if (len > max)
 		{
 			max = len;
@@ -30,7 +30,7 @@ int main()
 	return 0;
 }
 
-int getline(char s[], int lim)
+int getlines(char s[], int lim)
 {
 	int c, i;
 
@@ -41,6 +41,7 @@ int getline(char s[], int lim)
 		s[i] = c;
 		++i;
 	}
+	return i;
 }
 
 void copy(char to[], char from[])
