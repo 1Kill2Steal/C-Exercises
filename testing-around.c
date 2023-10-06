@@ -1,54 +1,40 @@
 // this file is only for writing and testing
 // code, finished projects are elsewhere,
-// currently working on: 032-1.16
+// currently working on: 032-1.17
 
 #include <stdio.h>
 
-//defines the longest length of the char array.
-#define MAXLINE		1000
+//defines the minimum required line length to print the text
+#define MINLINELEN	80
 
-int getlines(char line[], int maxline); 
-void copy(char to[], char from[]);
+//defines the total max length of the array
+#define MAXARRLEN	100000
 
 int main()
 {
-	int len;
-	int max;
-	char line[MAXLINE]; //current line
-	char longest[MAXLINE]; //longest line
-	max = 0;
-	while ((len = getlines(line, MAXLINE)) > 0)
-		if (len > max)
-		{
-			max = len;
-			copy(longest, line);
-		}
-	
-	if (max > 0)
-		printf("%s", longest);
-	
-	return 0;
-}
+	int c, i, j;
+	i = j = 0;
+	char line[MAXARRLEN];
 
-int getlines(char s[], int lim)
-{
-	int c, i;
-
-	for (i=0; i < lim-1 && (c=getchar()) != EOF && c != '\n'; ++i)
-		s[i] = c;
-	if (c == '\n')
+	while((c = getchar()) != EOF)
 	{
-		s[i] = c;
-		++i;
+		if(c != '\n')
+		{
+			++i;
+		}
+		else if(c == '\n' && i != 0)
+		{
+			++i;
+			if(i > MINLINELEN)
+			{
+				for(j; j < i; j++)
+					line[j] = c;
+			}
+			i = j = 0;
+		}
 	}
-	return i;
+	printf("Lines that have more length than %d:", MINLINELEN);
+	for(i=0; i < MAXARRLEN; i++)
+		printf("%c", line[i]);
 }
 
-void copy(char to[], char from[])
-{
-	int i;
-	
-	i = 0;
-	while((to[i] = from[i]) != '\0')
-		++i;
-}
