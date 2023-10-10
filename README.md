@@ -1,5 +1,7 @@
 The entire repository is based out of the book:
 "The C Programming Language, 2nd Edition".
+(The pages could be off by a bit, that's because
+I'm using the Bulgarian translated version of the book)
 
 This main folder contains all the program examples sorted by
 page (001, 002 ... and so on).
