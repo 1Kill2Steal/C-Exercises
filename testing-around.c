@@ -8,15 +8,15 @@
 
 void getInput()
 {
-	int c, i;
+	int i = 0;
 	char line[BUFFER];
-	while((c = getchar()) != EOF)
+	while((line[i] = getchar()) != EOF)
 	{
 		i++;	
-		line[i] = c;
-		if(c == '\n')
+		if(line[i] == '\n')
 		{
-			printf("\nString:\n%c", line);
+			printf("\nString:\n%d", line);
+			line[i+1] = '\0';
 		}
 	}
 }
