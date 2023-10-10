@@ -4,27 +4,24 @@
 
 #include <stdio.h>
 
-#define BUFFER		1024
+#define BUFFER        1024
 
-void getInput()
+int getInput(int line[], int max)
 {
-		int line[BUFFER];
-		int i;
-		while((i = getchar()) != EOF)
-		{
-		++i;
-			if(line[i] == '\n')
-			{
-				++i;
-				line[i] = '\0';
-			}
-		}
-		for(i = 0; i < BUFFER; i++)
-			printf("%d", line[i]);
+        int i = 0;
+        while((i = getchar()) != EOF && i < max)
+        {
+            line[i] = i;
+            ++i;
+        }
+		return i;
 }
 
 int main()
 {
-	getInput();	
-	return 0;
+	int input[BUFFER];
+	int read = getInput(input, BUFFER);  
+    for(int i = 0; i < read; i++)
+        printf("%d", input[i]);
+    return 0;
 }
