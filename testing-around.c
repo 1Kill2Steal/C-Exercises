@@ -6,29 +6,25 @@
 
 #define BUFFER		1024
 
-int printInput(char *line, int i)
 void getInput()
 {
-		char line[BUFFER];
+		int line[BUFFER];
 		int i;
 		while((i = getchar()) != EOF)
 		{
 		++i;
-		if(line[i] == '\n')
-		{
-			printf("\nString:\n%d", line);
-			line[i+1] = '\0';
+			if(line[i] == '\n')
+			{
+				++i;
+				line[i] = '\0';
+			}
 		}
-	}
+		for(i = 0; i < BUFFER; i++)
+			printf("%d", line[i]);
 }
 
 int main()
 {
-	int i = 0;
-	int line[BUFFER];
-	for (i = 0; i < BUFFER; i++)
-		printf("%d" line[i];
-	
 	getInput();	
 	return 0;
 }
