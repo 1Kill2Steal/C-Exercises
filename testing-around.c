@@ -16,28 +16,30 @@ int getInput(int line[], int max)
     int i = 0;
 	int c;
 	int nl, nw, word;
-	nl = nw = 0;
+	nl = NEW_LINE;
+	nw = NEW_WORD;
 
     while ((c = getchar()) != EOF && i < max)
     {
-		if(c == '\n' && nl != NEW_LINE)
+		if(c == '\n' && nl == NO_CHAINED_NEW_LINES)
 		{
 			nl = NEW_LINE;
 			line[i] = c;
+			++i;
 		}
-		else if((c == '\n' || c == '\t' || c == ' ') && nw != NEW_WORD)
+		else if( (c == '\t' || c == ' ') && nw == NO_EXCESS_WHITESPACE)
 		{
 			nw = NEW_WORD;
 			line[i] = c;
+			++i;
 		}
-		else if(c != '\n' || c != '\t' || c != ' ')
+		else if(c != '\n' && c != '\t' && c != ' ')
 		{
 			nw = NO_EXCESS_WHITESPACE;
-			line[i] = c;
-		}
-		else if(c != '\n')
 			nl = NO_CHAINED_NEW_LINES;
-		i++;
+			line[i] = c;
+			++i;
+		}
 	}
 
     return i;
